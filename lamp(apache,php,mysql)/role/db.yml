@@ -1,0 +1,5 @@
+- name: mysql service 
+  remote_user: root
+  hosts: dbserver
+  roles:
+   - db

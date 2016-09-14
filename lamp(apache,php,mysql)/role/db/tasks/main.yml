@@ -1,0 +1,12 @@
+- name: copy mysql_rpm
+  copy: src=mysql57-community-release-el7-7.noarch.rpm dest=/root/mysql57-community-release-el7-7.noarch.rpm
+- name: install rpm
+  command: yum localinstall /root/mysql57-community-release-el7-7.noarch.rpm
+  ignore_errors: True
+- name: install mysql
+  command: yum install mysql-community-server -y
+  ignore_errors: True
+- name: configurtaion mysql
+  copy: src=my.cnf dest=/etc/my.cnf
+- name: systemctl restart mysqld
+  service: name=mysqld state=restarted
