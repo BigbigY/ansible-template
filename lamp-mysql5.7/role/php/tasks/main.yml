@@ -1,0 +1,4 @@
+- name: install php
+  yum: name=php state=present
+- name: configuration php
+  copy: src=php.ini dest=/etc/php.ini

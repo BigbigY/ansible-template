@@ -1,0 +1,5 @@
+- name: php service
+  remote_user: root
+  hosts: webserver
+  roles:
+   - php
